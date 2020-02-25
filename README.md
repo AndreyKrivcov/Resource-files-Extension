@@ -42,7 +42,7 @@ target_link_libraries(${PROJECT_NAME}
 #include "resource_files_manager.h"
 using namespace Resource_files;
 ```
-Now you get access to your embed files with the healp of short API highlites in resource_files_manager.h file.
+Now you get access to your embed files with the help of short API highlighted in resource_files_manager.h file.
 A short working example inside Example directory:
 ```C++
 #include <iostream>
