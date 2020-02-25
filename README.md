@@ -78,5 +78,5 @@ CMake do following job:
 1. All files from your resources directory transferring into object files lik in this article: 
 Visit http://www.linuxjournal.com/content/embedding-file-executable-aka-hello-world-version-5967
 
-2. Generats source file for the resource_files_manager.h header file where add links to the embed files.
+2. Generats source file for the resource_files_manager.h header file where add links to the embed files. A generated source file copies to the binary directory.
 3. Adds all embed files into std::map with the key equals to the file name.
