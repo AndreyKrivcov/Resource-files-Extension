@@ -1,0 +1,1 @@
+A text from data_2.txt
