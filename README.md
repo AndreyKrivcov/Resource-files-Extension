@@ -1,8 +1,8 @@
-# Resource-files-Extention
+# Resource-files-Extension
 A way how to add emded resources to the C++ executable project with the help of CMake and short Api
 
 # How to use:
-1. Add Resource files Extention inside your project
+1. Add Resource files Extension inside your project
 2. Create directory for resource files and lay them inside this directory
 3. Add following calls to your CMake file:
 ```CMake
@@ -12,7 +12,7 @@ project(Embed_files_example)
 #==================================================================
 # Include directory with resource_files_manager.h 
 #==================================================================
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../Resource\ files\ Extention/include)  
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../Resource\ files\ Extension/include)  
 
 #==================================================================
 # Set directory with resources
@@ -22,7 +22,7 @@ set(RESOURCE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Resources)
 #==================================================================
 # Add reference to CMakeLists.txt of libresources.a project 
 #==================================================================
-add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Resource\ files\ Extention)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/Resource\ files\ Extension)
 
 #==================================================================
 # Build your project 
