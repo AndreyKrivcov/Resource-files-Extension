@@ -80,3 +80,4 @@ Visit http://www.linuxjournal.com/content/embedding-file-executable-aka-hello-wo
 
 2. Generats source file for the resource_files_manager.h header file where add links to the embed files. A generated source file copies to the binary directory.
 3. Adds all embed files into std::map with the key equals to the file name.
+4. Create libresources.a library that contains all resources from Resources directory and short API for its navigation.
