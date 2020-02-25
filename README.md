@@ -72,7 +72,7 @@ int main()
 }
 ```
 
-# How doesit works?
+# How does it works?
 CMake do following job:
 
 1. All files from your resources directory transferring into object files lik in this article: 
