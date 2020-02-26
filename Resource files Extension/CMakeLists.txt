@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.10.2)
 
 project(resources)
@@ -10,9 +11,9 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 #==================================================================
 
 # Check is objcopy command was definedor no
-if(NOT CMAKE_OBJCOPY)
+if(NOT DEFINED CMAKE_OBJCOPY)
         message( FATAL_ERROR "Can`t find CMAKE_OBJCOPY!" )
-endif(NOT CMAKE_OBJCOPY)
+endif(NOT DEFINED CMAKE_OBJCOPY)
 
 # Check is Resources directory was defined in parent scope or no
 if(NOT DEFINED RESOURCE_DIRECTORY)
@@ -44,6 +45,14 @@ file (GLOB EMBED_FILE_LIST ${RESOURCE_DIRECTORY}/*)
 
 set(LINK_TYPE "extern char ")
 
+If(NOT DEFINED TARGET_FORMAT)
+	set(TARGET_FORMAT "elf64-x86-64")
+endif(NOT DEFINED TARGET_FORMAT)
+
+If(NOT DEFINED TARGET_ARCHITECTURE)
+	set(TARGET_ARCHITECTURE "i386")
+endif(NOT DEFINED TARGET_ARCHITECTURE)
+
 # foreach loop by each resource file
 foreach(FILENAME ${EMBED_FILE_LIST})
 # Get file name and filepaths
@@ -54,7 +63,7 @@ foreach(FILENAME ${EMBED_FILE_LIST})
     	add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/${FILENAME_ONLY}.o
 				WORKING_DIRECTORY ${FILEPATH_ONLY}
 			        COMMAND ${CMAKE_OBJCOPY} 
-                       	 	ARGS -I binary -O elf64-x86-64 -B i386 ${FILENAME_ONLY} ${CMAKE_CURRENT_BINARY_DIR}/${FILENAME_ONLY}.o )
+                       	 	ARGS -I binary -O ${TARGET_FORMAT} -B ${TARGET_ARCHITECTURE} ${FILENAME_ONLY} ${CMAKE_CURRENT_BINARY_DIR}/${FILENAME_ONLY}.o )
 
 # Add path to new object resource file to the objective resource files list
 	list(APPEND PROJECT_EMBED_OBJ_FILES ${CMAKE_CURRENT_BINARY_DIR}/${FILENAME_ONLY}.o)
