@@ -12,7 +12,7 @@ project(Embed_files_example)
 #==================================================================
 # Include directory with resource_files_manager.h 
 #==================================================================
-include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../Resource\ files\ Extension/include)  
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Resource\ files\ Extension/include)  
 
 #==================================================================
 # Set directory with resources
